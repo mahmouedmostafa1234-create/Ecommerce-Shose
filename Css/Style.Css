@@ -126,6 +126,8 @@ nav {
     width: 100%;
 }
 
+
+
 .arrrow{
     font-size: 35px;
     margin-right: 5px;
@@ -361,7 +363,7 @@ nav {
 }
 
 .About{
-    height: 100vh;
+    height: 105vh;
     background-color: #EEEEEE;
     margin-top: -50px;
 }
@@ -384,6 +386,7 @@ nav {
     gap: 50px;
     width: 90%;
     height: 90%;
+    margin-top: 20px;
 }
 
 .about-pic{
@@ -437,6 +440,7 @@ nav {
     cursor: pointer;
     margin-top: 5px;
     transition: all .2s;
+    margin-top: 15px;
 }
 
 .about-foot p:hover{
