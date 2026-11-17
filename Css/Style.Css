@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0 ;
 }
+html,
+
+body{
+    scroll-behavior: smooth;
+}
 
 body{
     margin: 0;
@@ -16,7 +21,25 @@ nav {
     position: absolute;
     top: 0px;
     background-color: rgba(219, 219, 219, 0.1);
+    position: fixed;
+    animation: changeColor linear both;
+    animation-timeline: scroll(); 
+    animation-range: 0px 100px; 
 }
+
+
+@keyframes changeColor {
+  from {
+    background-color: transparent; 
+    box-shadow: none;
+    }
+  to {
+    background-color: rgba(29, 22, 22, 0.677);    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.582);
+    }
+}
+
+
 
 .nav-bar {
     display: flex;
@@ -172,6 +195,12 @@ nav {
     cursor: pointer;
     border: none;
     margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    a{
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 .btn:hover{
@@ -753,225 +782,539 @@ nav {
     }
 }
 
+#menu-toggle,
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .nav-bar {
+    width: 94%;
+  }
+
+  .tab {
+    width: 120px;
+  }
+
+  .one::before,
+  .two::before,
+  .three::before,
+  .four::before {
+    position: static;
+  }
+}
+
 @media (max-width: 1024px) {
-    .content-right {
-        width: 55%;
-    }
 
-    .content-right h1 {
-        font-size: 45px;
-    }
+  .tab {
+    width: 105px;
+  }
 
-    .stylish-details {
-        flex-direction: column;
-        padding: 20px 0;
-    }
+  .tab a {
+    font-size: 15px;
+  }
 
-    .container-left,
-    .container-right {
-        width: 90%;
-        margin-left: 0;
-    }
+  .fa-brands {
+    font-size: 22px;
+  }
 
-    .Stylish,
-    .container {
-        height: auto;
-    }
+  .home {
+    height: auto;
+    min-height: 100vh;
+  }
 
-    .releases-content {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem 0;
-    }
+  .home-content {
+    width: 100%;
+  }
 
-    .releases-right {
-        width: 80%;
-    }
+  .content {
+    height: auto;
+    min-height: 100vh;
+    padding: 110px 20px 50px;
+    gap: 15px;
+  }
 
-    .releases {
-        height: auto;
-        padding: 2rem 0;
-    }
+  .content-right {
+    width: 50%;
+  }
 
-    .brands {
-        flex-direction: column;
-    }
+  .content-right h1 {
+    font-size: 46px;
+  }
 
-    .new-right,
-    .new-left {
-        width: 90%;
-    }
+  .content-right h2 {
+    font-size: 18px;
+  }
 
-    .Terminator-content {
-        width: 80%;
-    }
+  .content-left {
+    width: 30%;
+  }
+
+  .content-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .arrrow {
+    font-size: 28px;
+  }
+
+  .categories-titel h2 {
+    font-size: 38px;
+  }
+
+  .categories-photos {
+    gap: 15px;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  .Stylish,
+  .container {
+    height: auto;
+  }
+
+  .stylish-details {
+    flex-direction: column;
+    width: 100%;
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  .container-left,
+  .container-right {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .container-left {
+    padding: 0;
+  }
+
+  .container-titel {
+    width: 100%;
+  }
+
+  .container-foot {
+    margin-left: 0;
+  }
+
+  .stylish-photo img {
+    height: auto;
+    display: block;
+  }
+
+  .companies {
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  .company {
+    height: auto;
+    gap: 3%;
+    justify-content: space-between;
+  }
+
+  .company img {
+    width: 15%;
+    height: auto;
+  }
+
+  .About {
+    height: auto;
+    margin-top: 0;
+    padding-bottom: 50px;
+  }
+
+  .about-photo {
+    height: auto;
+    gap: 40px;
+  }
+
+  .about-pic {
+    margin-top: 0;
+  }
+
+  .cap {
+    font-size: 14px;
+  }
+
+  .Blog {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .contanier {
+    height: auto;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px 30px;
+  }
+
+  .contanier .card {
+    width: calc(50% - 15px);
+  }
+
+  .card-down {
+    align-self: flex-start;
+  }
+
+  .releases {
+    height: auto;
+  }
+
+  .releases-cont {
+    padding: 50px 0;
+  }
+
+  .releases-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .releases-left {
+    width: 80%;
+    height: auto;
+  }
+
+  .releases-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .releases-right {
+    width: 80%;
+  }
+
+  .releases-header,
+  .releases-mid,
+  .releases-foot {
+    width: 100%;
+  }
+
+  .releases-foot {
+    padding-left: 0;
+  }
+
+  .new {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .brands {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+  }
+
+  .new-right,
+  .new-left {
+    width: 100%;
+  }
+
+  .new-left {
+    height: auto;
+    margin: 0;
+  }
+
+  .new-left img {
+    height: auto;
+    display: block;
+  }
+
+  .Terminator {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .Terminator-content {
+    width: 80%;
+  }
+
+  .Terminator-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .Terminator-header img {
+    width: 70px;
+  }
 }
 
 @media (max-width: 768px) {
-   
 
-    nav {
-        height: auto;
-        position: relative;
-    }
+  nav {
+    height: 80px;
+    z-index: 1000;
+  }
 
-    .Tabs {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .nav-bar {
+    width: 100%;
+    height: 80px;
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
 
-    .tab {
-        width: auto;
-        height: 40px;
-        padding: 0 10px;
-    }
+  .logo {
+    order: 1;
+  }
 
-    .one::before,
-    .two::before,
-    .three::before,
-    .four::before {
-        display: none;
-    }
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
 
-    .home {
-        height: auto;
-        padding: 100px 0 50px;
-    }
-    
-    .content {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        padding: 30px 15px;
-    }
+  .social {
+    order: 2;
+    margin-left: auto;
+    margin-right: 20px;
+  }
 
-    .content-right {
-        width: 100%;
-    }
+  .hamburger {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+  }
 
-    .content-right h1 {
-        font-size: 32px;
-    }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 
-    .arrrow {
-        display: none;
-    }
+  .Tabs {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgba(29, 29, 31, 0.97);
+  }
 
-    .categories-photos {
-        flex-direction: column;
-    }
+  .tab {
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-    .card {
-        width: 100%;
-    }
+  #menu-toggle:checked ~ .Tabs {
+    display: flex;
+  }
 
-    .about-photo {
-        flex-direction: column;
-        height: auto;
-        gap: 60px;
-    }
+  #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
 
-    .About {
-        height: auto;
-        padding-bottom: 40px;
-    }
+  #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
 
-    .cap {
-        display: none;
-    }
+  #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
 
-    .company {
-        flex-wrap: wrap;
-        gap: 20px;
-        height: auto;
-    }
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 15px 40px;
+  }
 
-    .company img {
-        width: 100px;
-        height: auto;
-    }
+  .content-right {
+    width: 100%;
+  }
 
-    .companies {
-        width: 90%;
-        margin-left: 5%;
-        height: auto;
-        padding: 20px 0;
-    }
+  .content-right h1 {
+    font-size: 34px;
+  }
 
-    .Blog {
-        height: auto;
-    }
+  .content-left {
+    width: 70%;
+    max-width: 280px;
+  }
 
-    .contanier {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px 0;
-    }
+  .arrrow {
+    display: none;
+  }
 
-    .card-down {
-        align-self: center;
-    }
+  .categories-titel h3 {
+    font-size: 16px;
+    margin-top: 30px;
+  }
 
-    .releases-mid {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
+  .categories-titel h2 {
+    font-size: 32px;
+  }
 
-    .releases-foot {
-        padding-left: 0;
-        align-self: center;
-    }
+  .categories-photos {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-    .releases-header {
-        align-self: center;
-        text-align: center;
-        width: 100%;
-    }
+  .categories-photos .card {
+    width: 100%;
+    max-width: 420px;
+  }
 
-    .Terminator {
-        height: auto;
-        padding: 40px 0;
-    }
+  .container-titel h2 {
+    font-size: 32px;
+  }
 
-    .Terminator-content {
-        width: 100%;
-    }
+  .container-subtitel h3,
+  .container-subtitel p {
+    font-size: 18px;
+  }
 
-    .Terminator-content h2 {
-        font-size: 2rem;
-    }
+  .container-subtitel p br {
+    display: none;
+  }
 
-    .Terminator-header img {
-        width: 40px;
-    }
+  .company {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+  }
+
+  .company img {
+    width: 100px;
+  }
+
+  .about-photo {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .cap {
+    position: static;
+    writing-mode: horizontal-tb;
+    margin: 10px 0 5px;
+    font-size: 14px;
+  }
+
+  .contanier {
+    gap: 35px 20px;
+  }
+
+  .contanier .card {
+    width: calc(50% - 10px);
+  }
+
+  .card i {
+    font-size: 3.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .contanier .card p {
+    font-size: 1rem;
+  }
+
+  .releases-left,
+  .releases-right {
+    width: 90%;
+  }
+
+  .releases-mid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .releases-header h2 {
+    font-size: 2rem;
+  }
+
+  .Terminator-content {
+    width: 100%;
+  }
+
+  .Terminator-content h2 {
+    font-size: 2rem;
+  }
+
+  .Terminator-content p {
+    font-size: 1.05rem;
+  }
+
+  .Terminator-header img {
+    width: 45px;
+  }
+
+  .final {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .final-foot p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .content-right h1 {
-        font-size: 26px;
-    }
+  .social {
+    margin-right: 15px;
+  }
 
-    .content-right h2 {
-        font-size: 16px;
-    }
+  .fa-brands {
+    font-size: 20px;
+  }
 
-    .btn,
-    .btn-2 {
-        width: 160px;
-        height: 45px;
-        font-size: 16px;
-    }
+  .content-right h1 {
+    font-size: 28px;
+  }
 
-    .categories-titel h2 {
-        font-size: 32px;
-    }
+  .content-right h2 {
+    font-size: 16px;
+  }
 
-    .container-titel h2 {
-        font-size: 28px;
-    }
+  .btn,
+  .btn-2 {
+    width: 160px;
+    height: 45px;
+    font-size: 16px;
+  }
 
-    .Terminator-content h2 {
-        font-size: 1.6rem;
-    }
+  .categories-titel h2 {
+    font-size: 28px;
+  }
+
+  .container-titel h2 {
+    font-size: 28px;
+  }
+
+  .container-subtitel {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contanier .card {
+    width: 100%;
+  }
+
+  .releases-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .new-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .Terminator-content h2 {
+    font-size: 1.6rem;
+  }
 }

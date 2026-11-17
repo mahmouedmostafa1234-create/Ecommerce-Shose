@@ -15,20 +15,27 @@
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
             </div>
+
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+
             <div class="Tabs">
                 <div class="tab one">
-                    <a href="Home">Home</a>
+                    <a href="#Home">Home</a>
                 </div>
                 <div class="tab two">
-                    <a href="Clients">Clients</a>
+                    <a href="#Clients">Clients</a>
                 </div>
                 <div class="tab three">
-                    <a href="Blog">Blog</a>
+                    <a href="#Blog">Blog</a>
                 </div>
                 <div class="tab four">
-                    <a href="New">New Releases</a>
+                    <a href="#New">New Releases</a>
                 </div>
             </div>
+
             <div class="social">
                 <i class="fa-brands fa-facebook-f" style="color: rgb(255, 255, 255);"></i>
                 <i class="fa-brands fa-twitter" style="color: rgb(255, 255, 255);"></i>
@@ -37,7 +44,7 @@
         </div>
     </nav>
 
-    <section class="home">
+    <section class="home" id="Home">
         <div class="home-content">
             <div class="content">
                 <p class="arrrow ar-1">←</p>
@@ -50,7 +57,7 @@
                     <h2>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
                         malesuada.
                     </h2>
-                    <button class="btn">View More</button>
+                    <button class="btn"><a href="#Categories">View More</a> </button>
                 </div>
                 <div class="content-left">
                     <img src="images/image2-400x500.jpg" alt="">
@@ -60,7 +67,7 @@
         </div>
 
     </section>
-    <section class="categories">
+    <section class="categories" id="Categories">
         <div class="categories-titel">
             <h3>LOREM ANTE IOS</h3>
             <h2>Choose your style</h2>
@@ -119,7 +126,7 @@
             <img src="images/2.png" alt="">
         </div>
     </section>
-    <section class="categories About">
+    <section class="categories About" id="Blog">
         <div class="categories-titel about-titel">
             <h3>ABOUT THE BRAND</h3>
             <h2>Our Blog</h2>
@@ -193,7 +200,7 @@
             </div>
         </div>
     </section>
-    <section class="releases">
+    <section class="releases" id="New">
         <div class="container releases-cont">
             <div class="releases-content">
                 <div class="releases-left">
@@ -218,7 +225,7 @@
         </div>
         </div>
     </section>
-    <section class="new">
+    <section class="new" id="Clients">
         <div class="brands">
             <div class="new-right">
                 <h2>Our brand new shoes
